@@ -1,0 +1,29 @@
+﻿@using MvcCorePersonelDepartman.Models
+@model List<Birim>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Departman</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+        <th>Detaylar</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.BirimID</td>
+            <td>@item.BirimName</td>
+            <td><a href="/Default/BirimSil/@item.BirimID" class="btn btn-danger"> Sil</a></td>
+            <td><a href="/Default/BirimGetir/@item.BirimID" class="btn btn-primary"> Güncelle</a></td>
+            <td><a href="/Default/BirimDetay/@item.BirimID" class="btn btn-info"> Detay</a></td>
+        
+
+        </tr>
+    }
+</table>
+<a href="/Default/YeniBirim/" class="btn btn-success">Yeni Departman Ekle</a>

@@ -1,0 +1,17 @@
+﻿@model MvcCorePersonelDepartman.Models.Birim
+@{
+    ViewData["Title"] = "BirimGetir";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+@using (Html.BeginForm("Guncelle", "Default", FormMethod.Post))
+{
+    <b>Departman ID:</b>
+   @Html.TextBoxFor(x=> x.BirimID,new { @class = "form-control" })
+    <br />
+    <b>Departman Adı:</b>
+    @Html.TextBoxFor(x => x.BirimName, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Güncelle</button>
+}
+

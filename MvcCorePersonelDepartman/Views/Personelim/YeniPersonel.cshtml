@@ -1,0 +1,20 @@
+﻿@model MvcCorePersonelDepartman.Models.Personel
+@{
+    ViewData["Title"] = "YeniPersonel";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+<form class="form-group" method="post">
+
+    <b>Adı:</b>
+    @Html.TextBoxFor(x => x.FirstName, new { @class = "form-control" })
+    <b>Soyadı:</b>
+    @Html.TextBoxFor(x => x.LastName, new { @class = "form-control" })
+    <b>Şehir:</b>
+    @Html.TextBoxFor(x => x.City, new { @class = "form-control" })
+    <b>Birim:</b>
+    @Html.DropDownListFor(x => x.Birim.BirimID, (List<SelectListItem>)ViewBag.dgr, new { @class = "form-control" })
+    <br />
+
+    <button class="btn btn-success">Ekle</button>
+</form>
